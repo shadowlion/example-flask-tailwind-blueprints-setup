@@ -2,6 +2,6 @@
 
 **/__pycache__/
 
-app/static/css/output.css
+app/example/static/css/output.css
 
 pyright.json

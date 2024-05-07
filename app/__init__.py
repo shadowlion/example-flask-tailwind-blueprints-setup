@@ -1,9 +1,12 @@
 from flask import Flask
 
-from .example_bp import example_bp
 
-app = Flask(__name__)
-app.register_blueprint(example_bp)
+def create_app():
+    app = Flask(__name__)
 
-if __name__ == "__main__":
-    app.run()
+    with app.app_context():
+        from .example import routes
+
+        app.register_blueprint(routes.example_bp)
+
+        return app
